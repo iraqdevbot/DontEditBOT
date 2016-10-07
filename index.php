@@ -48,6 +48,7 @@ if (isset($update->edited_message)){
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
+    'disable_web_page_preview'=>'true',
     'parse_mode'=>'html',
     'reply_markup'=>json_encode([
       'inline_keyboard'=>[
