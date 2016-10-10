@@ -55,7 +55,8 @@ if (isset($update->edited_message)){
         [
           ['text'=>'Channel','url'=>'https://telegram.me/joinchat/DtebJD-YicabzaggOWIHeQ']
         ]
-      ])
+      ]
+    ])
   ]);
 }elseif( $fadmin == $admin |  $fadmin == $admin2 and $update->message->text == '/stats'){
     $txtt = file_get_contents('member.txt');
