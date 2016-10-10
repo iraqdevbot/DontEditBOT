@@ -50,11 +50,11 @@ if (isset($update->edited_message)){
     'text'=>$text,
     'disable_web_page_preview'=>'true',
     'parse_mode'=>'html',
-    'reply_markup'=>json_encode([
-      'inline_keyboard'=>[
-        [
-          ['text'=>'Channel','url'=>'https://telegram.me/joinchat/DtebJD-YicabzaggOWIHeQ']
-        ]
+    'reply_markup'=>['keyboard'=>[
+      [
+      ['text'=>'/submit']
+  ]
+       ]
       ]
     ])
   ]);
