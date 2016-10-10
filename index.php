@@ -50,13 +50,7 @@ if (isset($update->edited_message)){
     'text'=>$text,
     'disable_web_page_preview'=>'true',
     'parse_mode'=>'html',
-    'reply_markup'=>['keyboard'=>[
-      [
-      ['text'=>'/submit']
-  ]
-       ]
-      ]
-    ])
+    'reply_markup'=>['keyboard'=>[[['text'=>'/submit']]]]
   ]);
 }elseif( $fadmin == $admin |  $fadmin == $admin2 and $update->message->text == '/stats'){
     $txtt = file_get_contents('member.txt');
