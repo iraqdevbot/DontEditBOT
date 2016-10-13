@@ -31,7 +31,7 @@ if (isset($update->edited_message)){
   $edname = $editm->from->first_name;
   $eduser = $editm->from->username;
   $jsu = json_decode(file_get_contents(__DIR__.'/users/'.$eid.'.json'));
-  $text = '<a href="https://telegram.me/.$eduser>".$edname."</a>\nI saw that I understand what you said hurt him again, saying:'.$jsu;
+  $text = "I saw that I understand what you said hurt him again, saying:".$jsu;
   $id = $update->edited_message->chat->id;
   bot('sendmessage',[
     'chat_id'=>$id,
