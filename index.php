@@ -52,7 +52,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "*Hi, *[$edname](https://telegram.me/'.$eduser)\nDo not edit robot \n Welcome \n for Ed me to check on the link below\n [Add Group](https://telegram.me/IPEXMEBOT?startgroup=new)\n";
+  $text = "*Hi, $edname*\nDo not edit robot \n Welcome \n for Ed me to check on the link below\n [Add Group](https://telegram.me/IPEXMEBOT?startgroup=new)\n";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
