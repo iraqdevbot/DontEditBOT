@@ -29,15 +29,23 @@ if (isset($update->edited_message)){
   //$chat_id1 = $editm->chat->id;
   $eid = $editm->message_id;
   $edname = $editm->from->first_name;
+  $eduser = $editm->from->username;
   $jsu = json_decode(file_get_contents(__DIR__.'/users/'.$eid.'.json'));
-  $text = "<b>".$edname."</b>\nI saw that I understand what you said hurt him again, saying:
-".$jsu;
+  $text = '<a href="https://telegram.me/.$eduser>".$edname."</a>\nI saw that I understand what you said hurt him again, saying:'.$jsu;
   $id = $update->edited_message->chat->id;
   bot('sendmessage',[
     'chat_id'=>$id,
     'reply_to_message_id'=>$eid,
     'text'=>$text,
-    'parse_mode'=>'html'
+    'disable_web_page_preview'=>'true',
+    'parse_mode'=>'html',
+    'reply_markup'=>json_encode([
+    'inline_keyboard'=>[
+        [
+          ['text'=> $edname,'url'=>'https://telegram.me/'.$eduser]
+        ]
+      ]
+    ])
   ]);
   $file_o = __DIR__.'/users/'.$eid.'.json';
   file_put_contents($file_o,json_encode($update->edited_message->text));
