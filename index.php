@@ -38,21 +38,14 @@ if (isset($update->edited_message)){
     'reply_to_message_id'=>$eid,
     'text'=>$text,
     'disable_web_page_preview'=>'true',
-    'parse_mode'=>'html',
-    'reply_markup'=>json_encode([
-    'inline_keyboard'=>[
-        [
-          ['text'=> $edname,'url'=>'https://telegram.me/'.$eduser]
-        ]
-      ]
-    ])
+    'parse_mode'=>'html'
   ]);
   $file_o = __DIR__.'/users/'.$eid.'.json';
   file_put_contents($file_o,json_encode($update->edited_message->text));
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "Do not edit robot \n Welcome \n for Ed me to check on the link below\n <a href='https://telegram.me/IPEXMEBOT?startgroup=new'>Add Group</a>\n";
+  $text = "<b>Hi, </b><a href='https://telegram.me/'.$eduser>$edname</a>\nDo not edit robot \n Welcome \n for Ed me to check on the link below\n <a href='https://telegram.me/IPEXMEBOT?startgroup=new'>Add Group</a>\n";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
