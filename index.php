@@ -1,7 +1,7 @@
 <?php
 ob_start();
-define('API_KEY','247472322:AAErkOx2Sm_yJdR2Bx_s0xW_A9uU8_xPjp8');
-$admin = "249010980";
+define('API_KEY','294262059:AAGpdFllCutCak5x3INGZ2sEaSzqMq3BS3I');
+$admin = "39770224";
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -52,7 +52,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "`Do not edit robot` \n `Welcome` \n `for Ed me to check on the link below`\n [Add Group](https://telegram.me/IPEXMEBOT?startgroup=new)\n";
+  $text = "`Do not edit robot` \n `Welcome` \n `for Ed me to check on the link below`\n [Add Group](https://telegram.me/IQDONTEDITBOT?startgroup=new)\n";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
@@ -61,7 +61,7 @@ if (isset($update->edited_message)){
     'reply_markup'=>json_encode([
       'inline_keyboard'=>[
         [
-          ['text'=>'Channel','url'=>'https://telegram.me/joinchat/DtebJD-YicabzaggOWIHeQ']
+          ['text'=>'Channel','url'=>'https://telegram.me/IQDevs']
         ]
       ]
     ])
